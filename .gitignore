@@ -1,0 +1,7 @@
+# ------------------------------
+# CMake + MSVC Project .gitignore
+# ------------------------------
+
+# Directories
+build/
+.vscode/
