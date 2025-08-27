@@ -47,16 +47,16 @@ From the repository root:
 cmake -S . -B build -G "Visual Studio 17 2022"
 cmake --build build --config Release
 # Run any executable created by CMake:
-./build\Release\currency_denominations.exe
-./build\Release\merge_sorted_arrays.exe
-./build\Release\linked_list_basics.exe
-./build\Release\sample_receipt.exe
-./build\Release\squares_in_circle.exe
-./build\Release\wage_calculator.exe
-./build\Release\eggfarm_batch_calculator.exe
-./build\Release\pc_build_configurator.exe
-./build\Release\plastics_purchase_order.exe
-./build\Release\password_helper.exe
+.\build\Release\currency_denominations.exe
+.\build\Release\merge_sorted_arrays.exe
+.\build\Release\linked_list_basics.exe
+.\build\Release\sample_receipt.exe
+.\build\Release\squares_in_circle.exe
+.\build\Release\wage_calculator.exe
+.\build\Release\eggfarm_batch_calculator.exe
+.\build\Release\pc_build_configurator.exe
+.\build\Release\plastics_purchase_order.exe
+.\build\Release\password_helper.exe
 ```
 
 ### macOS / Linux (default Makefiles or Ninja)
