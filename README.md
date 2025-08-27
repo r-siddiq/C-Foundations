@@ -9,15 +9,19 @@ A collection of early C++ console programs. Each source file builds to its own e
 ## 📁 Project Layout
 
 ```
-C++ Foundations/
+c-foundations/
 ├─ CMakeLists.txt
-├─ RahimSiddiq_Lab2.cpp
-├─ RahimSiddiq_Lab3.cpp
-├─ RahimSiddiq_Lab4.cpp
-├─ RahimSiddiq_Lab5.cpp
-├─ RahimSiddiq_Lab6.cpp
-├─ RahimSiddiq_Lab7.cpp
-└─ RahimSiddiq_Lab8.cpp
+├─ README.md
+├─ currency_denominations.cpp      # break amount into bills/coins
+├─ merge_sorted_arrays.cpp         # two-pointer merge into one sorted array
+├─ linked_list_basics.cpp          # singly linked list (ID/grade)
+├─ sample_receipt.cpp              # formatted store receipt
+├─ squares_in_circle.cpp           # area ratio: how many squares fit in a circle
+├─ wage_calculator.cpp             # retail pay: hourly vs. commission
+├─ eggfarm_batch_calculator.cpp    # egg batch totals, percentages, dozens
+├─ pc_build_configurator.cpp       # PC builder & price estimator (functions)
+├─ plastics_purchase_order.cpp     # recycled plastics purchase order
+└─ password_helper.cpp             # password rules + confirmation (C-strings)
 ```
 
 ---
@@ -43,13 +47,16 @@ From the repository root:
 cmake -S . -B build -G "Visual Studio 17 2022"
 cmake --build build --config Release
 # Run any executable created by CMake:
-.\build\Release\RahimSiddiq_Lab2.exe
-.\build\Release\RahimSiddiq_Lab3.exe
-.\build\Release\RahimSiddiq_Lab4.exe
-.\build\Release\RahimSiddiq_Lab5.exe
-.\build\Release\RahimSiddiq_Lab6.exe
-.\build\Release\RahimSiddiq_Lab7.exe
-.\build\Release\RahimSiddiq_Lab8.exe
+.uild\Release\currency_denominations.exe
+.uild\Release\merge_sorted_arrays.exe
+.uild\Release\linked_list_basics.exe
+.uild\Release\sample_receipt.exe
+.uild\Release\squares_in_circle.exe
+.uild\Release\wage_calculator.exe
+.uild\Release\eggfarm_batch_calculator.exe
+.uild\Release\pc_build_configurator.exe
+.uild\Release\plastics_purchase_order.exe
+.uild\Release\password_helper.exe
 ```
 
 ### macOS / Linux (default Makefiles or Ninja)
@@ -57,13 +64,16 @@ cmake --build build --config Release
 cmake -S . -B build
 cmake --build build -j
 # Run any executable created by CMake:
-./build/RahimSiddiq_Lab2
-./build/RahimSiddiq_Lab3
-./build/RahimSiddiq_Lab4
-./build/RahimSiddiq_Lab5
-./build/RahimSiddiq_Lab6
-./build/RahimSiddiq_Lab7
-./build/RahimSiddiq_Lab8
+./build/currency_denominations
+./build/merge_sorted_arrays
+./build/linked_list_basics
+./build/sample_receipt
+./build/squares_in_circle
+./build/wage_calculator
+./build/eggfarm_batch_calculator
+./build/pc_build_configurator
+./build/plastics_purchase_order
+./build/password_helper
 ```
 
 > 💡 CMake detects all `*.cpp` in the folder and makes one target per file. Add another `Foo.cpp` and rerun the two CMake commands above—CMake will generate a `Foo` executable automatically.
@@ -72,83 +82,108 @@ cmake --build build -j
 
 ## 📚 Program Index
 
-| Executable | What it does | Core topics | Typical interaction |
+| Executable (target) | What it does | Core topics | Typical interaction |
 |---|---|---|---|
-| `RahimSiddiq_Lab2` | Prints a formatted **Costco‑style receipt**, sums subtotal, applies tax, and prints total. | I/O, constants, strings, arithmetic | No input; it prints a sample receipt.|
-| `RahimSiddiq_Lab3` | Computes how many **squares fit inside a circle** by **area ratio** (circle area ÷ square area). | I/O, `iomanip`, numeric constants | Prompts for circle **diameter** and square **side**.|
-| `RahimSiddiq_Lab4` | Calculates an employee’s **net pay** using either **hourly** (with overtime) **or commission tiers**—whichever is higher. | Input validation, conditionals, `iomanip` | Prompts for **hours worked** and **weekly sales**.|
-| `RahimSiddiq_Lab5` | Aggregates an egg batch: totals **white/brown**, **percentages**, and **dozens** per type. | Loops, validation, integer vs. floating‑point math | Prompts for number of **baskets**, then counts per basket.|
-| `RahimSiddiq_Lab6` | PC **configurator & pricer**: user chooses CPU speed, storage, RAM, and touchscreen; program computes price. | **Functions**, pass‑by‑reference, decomposition, loops, formatting | Repeats builds until the user quits.|
-| `RahimSiddiq_Lab7` | Builds a **recycled plastics purchase order** with a table for each plastic type, weight, unit price, and line total. | **Arrays**, parallel arrays, tabular output | Prompts for pounds per material type.|
-| `RahimSiddiq_Lab8` | **Password helper** that enforces: length 6–20, no spaces, at least one uppercase, lowercase, digit, and punctuation; then confirmation. | **C‑strings**, `<cctype>`, `<cstring>`, loops | Prompts for a password until all rules pass, then confirm.|
-
----
+| `currency_denominations` | Breaks a money amount into **bills & coins** (100s…1s, quarters…pennies). | integer arithmetic, modulo, formatting | Prompts for an amount like `123.45` |
+| `merge_sorted_arrays` | Merges two **pre‑sorted arrays** into a single sorted array via the **two‑pointer merge** step. | arrays, loops, algorithmic complexity | No input (arrays auto‑generated) |
+| `linked_list_basics` | Creates and traverses a **singly linked list** of students (random ID, grade); counts total and `A` grades. | structs, pointers, traversal | No input |
+| `sample_receipt` | Prints a formatted **store receipt**, sums subtotal, applies tax, and prints total. | I/O, constants, strings, arithmetic | No input |
+| `squares_in_circle` | Computes how many **squares fit inside a circle** by **area ratio** (circle area ÷ square area). | I/O, `iomanip`, numeric constants | Prompts for circle **diameter** and square **side** |
+| `wage_calculator` | Calculates an employee’s **net pay** using either **hourly** (with overtime) **or commission tiers**—whichever is higher. | input validation, conditionals, `iomanip` | Prompts for **hours worked** and **weekly sales** |
+| `eggfarm_batch_calculator` | Aggregates an egg batch: totals **white/brown**, **percentages**, and **dozens** per type. | loops, validation, integer & floating‑point math | Prompts for **baskets**, then counts per basket |
+| `pc_build_configurator` | PC **configurator & pricer**: choose CPU speed, storage, RAM, touchscreen; computes price. | **functions**, pass‑by‑reference, decomposition | Repeats builds until the user quits |
+| `plastics_purchase_order` | Builds a **recycled plastics purchase order** with weights, unit prices, line totals, and grand totals. | **arrays**, table formatting | Prompts for pounds per plastic type |
+| `password_helper` | **Password helper** that enforces: length 6–20, no spaces, at least one uppercase, lowercase, digit, and punctuation; then confirmation. | **C‑strings**, `<cctype>`, `<cstring>`, loops | Prompts until rules pass; then confirm |
 
 ## 📝 Program Notes
 
-### Lab 2 — “Costco receipt”
-- Hard‑coded item names and prices; computes subtotal, tax, and total.
-- Demonstrates string use, constants, and simple arithmetic.
+### currency_denominations — “Currency breakdown”
+- Prompts for a money amount.
+- Computes number of bills ($100…$1) and coins (quarters, dimes, nickels, pennies).
+- Demonstrates integer division and modulo.
 
-**Run:** `./RahimSiddiq_Lab2` (no input required)
+**Run:** `./currency_denominations`
 
 ---
 
-### Lab 3 — “Squares in a circle”
-- Asks for circle **diameter** and square **side length**.
-- Uses `PI` constant; computes areas and prints `numSquares` with formatting.
-- Note: result uses **area ratio**; it does **not** model geometric packing efficiency.
+### merge_sorted_arrays — “Merge step”
+- Generates two strictly increasing integer arrays.
+- Uses the classic **two‑pointer merge** to produce a combined sorted array.
 
-**Run:** `./RahimSiddiq_Lab3`  
+**Run:** `./merge_sorted_arrays` (no input)
+
+---
+
+### linked_list_basics — “Student linked list”
+- Builds a small linked list of `Student` nodes with random IDs and grades.
+- Traverses the list, printing values, counting nodes, and tallying `A` grades.
+
+**Run:** `./linked_list_basics` (no input)
+
+---
+
+### sample_receipt — “Store receipt”
+- Hard‑coded item names and prices; computes subtotal, tax, and total.
+- Demonstrates formatted output and use of constants.
+
+**Run:** `./sample_receipt` (no input)
+
+---
+
+### squares_in_circle — “Squares in a circle”
+- Asks for circle **diameter** and square **side length**.
+- Computes areas and divides to estimate how many squares “fit” inside.
+
+**Run:** `./squares_in_circle`  
 **Input:** `diameter`, then `square side`
 
 ---
 
-### Lab 4 — “Retail pay: hourly vs. commission”
+### wage_calculator — “Retail pay”
 - Validates non‑negative **hours** and **sales**.
-- Computes hourly pay (with overtime threshold) and commission via four tiers; prints the larger (“net pay”).
+- Computes hourly pay (with overtime) vs commission (tiered) and prints the higher.
 
-**Run:** `./RahimSiddiq_Lab4`  
+**Run:** `./wage_calculator`  
 **Input:** `hours worked`, `weekly sales`
 
 ---
 
-### Lab 5 — “Egg batch stats”
-- Prompts for number of **baskets**, then loops to collect **white** and **brown** counts per basket.
-- Prints totals, **percentages**, and **carton dozens** for each type.
+### eggfarm_batch_calculator — “Egg batch stats”
+- Prompts for number of **baskets**, then counts **white** and **brown** eggs per basket.
+- Prints totals, percentages, and dozen counts.
 
-**Run:** `./RahimSiddiq_Lab5`  
-**Input:** `num baskets`, then per‑basket counts for white, then brown
+**Run:** `./eggfarm_batch_calculator`  
+**Input:** `num baskets`, then counts for white and brown per basket
 
 ---
 
-### Lab 6 — “PC builder & pricer”
+### pc_build_configurator — “PC builder & pricer”
 - Three‑function design:
-  - `userInput(...)` gathers & validates selections (by reference).
-  - `calculateTotal(...)` derives price from base + increments (CPU, storage, RAM, touchscreen) with markup.
-  - `displayBuild(...)` prints the summary.
-- Loop allows building multiple configurations.
+  - `userInput(...)` gathers selections.
+  - `calculateTotal(...)` derives cost from base + increments.
+  - `displayBuild(...)` prints results.
+- Loops to allow multiple builds.
 
-**Run:** `./RahimSiddiq_Lab6`  
-**Input:** CPU GHz, storage (GB), RAM (GB), touchscreen Y/N, then optionally build another
-
----
-
-### Lab 7 — “Recycled plastics purchase order”
-- Parallel arrays for **type names**, **prices per lb**, **entered weights**, and **line totals**.
-- Prints an aligned table and grand totals (weight and cost).
-
-**Run:** `./RahimSiddiq_Lab7`  
-**Input:** pounds for each listed plastic type
+**Run:** `./pc_build_configurator`  
+**Input:** CPU GHz, storage GB, RAM GB, touchscreen Y/N
 
 ---
 
-### Lab 8 — “Password generator & validator”
-- Enforces rules via `<cctype>` checks across a C‑string buffer.
-- Repeats with specific hints until all rules pass; then asks to **confirm** (must match).
+### plastics_purchase_order — “Recycled plastics order”
+- Parallel arrays for plastic types, prices, user‑entered weights, and line totals.
+- Prints an aligned purchase order with totals.
 
-**Run:** `./RahimSiddiq_Lab8`  
-**Input:** password string (6–20 chars, no spaces, at least one: upper, lower, digit, punctuation), then confirmation
+**Run:** `./plastics_purchase_order`  
+**Input:** pounds for each plastic type
+
+---
+
+### password_helper — “Password generator & validator”
+- Enforces password rules: 6–20 chars, no spaces, ≥1 upper, lower, digit, punctuation.
+- Prompts until valid, then requires re‑entry to confirm.
+
+**Run:** `./password_helper`  
+**Input:** password string, then confirmation
 
 ---
 
