@@ -3,6 +3,7 @@
 // 10/14/2023
 
 #include <iostream>
+#include <ctime>
 
 // constant declarations
 #define DATA1_SIZE 15
@@ -19,8 +20,7 @@ int main()
 	int data1[DATA1_SIZE];
 	int data2[DATA2_SIZE];
 	int data12[DATA12_SIZE];
-
-	srand(time(0));											// seed random numbers
+    srand(static_cast<unsigned int>(time(0)));				// seed random numbers
 
 	// populate and print first array
 	populateData(data1, DATA1_SIZE);

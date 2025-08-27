@@ -3,6 +3,7 @@
 // 10/25/2023
 
 #include <iostream>
+#include <ctime>
 using namespace std;
 
 typedef struct node
@@ -20,8 +21,7 @@ int countAs(Student* head);											// Added function prototype for # of A's
 int main()
 {
 	cout << "Rahim Siddiq - Project 3 - Linked List Exercise!\n\n";
-
-	srand(time(NULL));												// "Seed" random number generator
+	srand((unsigned int)time(NULL));								// "Seed" random number generator
 
 	Student student1;												// Declare and fill the first node
 	Student* top;

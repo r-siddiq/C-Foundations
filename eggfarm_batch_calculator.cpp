@@ -68,8 +68,8 @@ int main()
 	}
 	
 	// Type conversions for percentage calculation
-	float itotWhiteEggs = static_cast<int> (totWhiteEggs);
-	float itotBrownEggs = static_cast<int> (totBrownEggs);
+	float itotWhiteEggs = static_cast<float> (totWhiteEggs);
+	float itotBrownEggs = static_cast<float> (totBrownEggs);
 	
 	// Calculations for total number of eggs, percentages of each color, and how many dozens of each color
 	totalEggs = totBrownEggs + totWhiteEggs;

@@ -132,7 +132,7 @@ double calculateTotal(double cpuSpeed, int storage, int ram, bool touchScreen)
 	if (cpuSpeed > speedTier)
 	{
 		// calculate chargable tiers for processor speed / multiply by extra cost and store to addCost
-		addSpeed = cpuSpeed / speedTier;
+		addSpeed = static_cast<int>(cpuSpeed / speedTier);
 		addCost = addCost + addSpeed * speedCost;
 	}
 	// Charge $40 for every 500GB >= 500 increment addCost

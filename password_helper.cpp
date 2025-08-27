@@ -43,7 +43,7 @@ int main()
 		// User input prompt for c-string array
 		cin.getline(desiredPass, PASSLENGTH);
 		// for loop increments variables when password requisites in an element are met
-		for (int i = 0; i < strlen(desiredPass); i++)
+		for (size_t i = 0; i < strlen(desiredPass); i++)
 		{
 			if (isupper(desiredPass[i]))
 				passUpperCase++;
